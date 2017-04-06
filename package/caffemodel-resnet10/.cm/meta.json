@@ -1,0 +1,68 @@
+{
+  "check_exit_status": "yes",
+  "customize": {
+    "extra_dir": "",
+    "file_with_weights": "resnet10_cvgj_iter_320000.caffemodel",
+    "force_ask_path": "yes",
+    "install_env": {
+      "MODEL_FILE": "resnet10_cvgj_iter_320000.caffemodel",
+      "MODEL_HASH_CALCULATOR": "sha256sum",
+      "MODEL_HASH_REF": "7291cda37d486d442f05f80784d11e1b53d923a6da512038fee5308158b359e7",
+      "MODEL_URL": "https://docs.google.com/uc?export=download&id=0B6VgjAr4t_oTdUhaclljRWlPSVU"
+    },
+    "no_os_in_suggested_path": "yes",
+    "no_ver_in_suggested_path": "yes",
+    "params": {
+			"train": {
+					"template": "train.prototxt",
+					"substitute":{
+					"train_batch_size": 32,
+					"val_batch_size": 50
+					}
+			},
+			"test": {
+					"template": "test.prototxt",
+					"substitute":{
+					"train_batch_size": 32,
+					"val_batch_size": 50
+					}
+			},
+			"deploy": {
+					"substitute": {
+					"batch_size": 10
+					},
+					"template": "deploy.prototxt"
+			}
+    },
+    "skip_file_check": "yes",
+    "version": "trunk"
+  },
+  "end_full_path": {
+    "linux": "resnet10_cvgj_iter_320000.caffemodel",
+    "win": "resnet10_cvgj_iter_320000.caffemodel"
+  },
+  "only_for_host_os_tags": [
+    "windows",
+    "linux"
+  ],
+  "only_for_target_os_tags": [
+    "windows",
+    "linux"
+  ],
+  "package_extra_name": " (resnet, resnet10)",
+  "process_script": "download",
+  "soft_uoa": "e2400aabc11d6cd1",
+  "suggested_path": "caffemodel-resnet10",
+  "tags": [
+    "caffe",
+    "weights",
+    "caffemodel",
+    "resnet",
+    "resnet10"
+  ],
+  "use_scripts_from_another_entry": {
+    "data_uoa": "download-caffemodel",
+    "module_uoa": "script",
+    "repo_uoa": "ck-caffe"
+  }
+}
